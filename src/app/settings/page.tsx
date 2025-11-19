@@ -55,8 +55,8 @@ export default function Settings() {
                                 key={lang.code}
                                 onClick={() => setSelectedLanguage(lang.code)}
                                 className={`p-4 rounded-lg border-2 transition-all ${selectedLanguage === lang.code
-                                        ? 'border-blue-500 bg-blue-50'
-                                        : 'border-gray-200 hover:border-blue-300 bg-white'
+                                    ? 'border-blue-500 bg-blue-50'
+                                    : 'border-gray-200 hover:border-blue-300 bg-white'
                                     }`}
                             >
                                 <div className="flex items-center space-x-3">
@@ -93,8 +93,8 @@ export default function Settings() {
                                 <button
                                     onClick={() => setTimeFormat('12h')}
                                     className={`flex-1 p-3 rounded-lg border-2 transition-all ${timeFormat === '12h'
-                                            ? 'border-blue-500 bg-blue-50 text-blue-900'
-                                            : 'border-gray-200 hover:border-blue-300'
+                                        ? 'border-blue-500 bg-blue-50 text-blue-900'
+                                        : 'border-gray-200 hover:border-blue-300'
                                         }`}
                                 >
                                     <p className="font-medium">12-Hour</p>
@@ -103,8 +103,8 @@ export default function Settings() {
                                 <button
                                     onClick={() => setTimeFormat('24h')}
                                     className={`flex-1 p-3 rounded-lg border-2 transition-all ${timeFormat === '24h'
-                                            ? 'border-blue-500 bg-blue-50 text-blue-900'
-                                            : 'border-gray-200 hover:border-blue-300'
+                                        ? 'border-blue-500 bg-blue-50 text-blue-900'
+                                        : 'border-gray-200 hover:border-blue-300'
                                         }`}
                                 >
                                     <p className="font-medium">24-Hour</p>
@@ -239,10 +239,10 @@ export default function Settings() {
                         onClick={handleSaveSettings}
                         disabled={saveStatus === 'saving'}
                         className={`px-8 py-3 rounded-lg font-medium transition-colors ${saveStatus === 'saved'
-                                ? 'bg-green-600 text-white'
-                                : saveStatus === 'saving'
-                                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                    : 'bg-blue-600 text-white hover:bg-blue-700'
+                            ? 'bg-green-600 text-white'
+                            : saveStatus === 'saving'
+                                ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                : 'bg-blue-600 text-white hover:bg-blue-700'
                             }`}
                     >
                         {saveStatus === 'saved' ? '✓ Settings Saved' :

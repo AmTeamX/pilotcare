@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function Dashboard() {
   const [sleepScore] = useState(78);
   const [fatigueRisk] = useState('Medium');
-  
+
   const dutySchedule = [
     { date: 'Oct 18', flight: 'BA123 LHR-JFK', hours: 8.5, status: 'Completed' },
     { date: 'Oct 19', flight: 'BA124 JFK-LHR', hours: 7.2, status: 'Scheduled' },
@@ -30,11 +30,10 @@ export default function Dashboard() {
 
       {/* Fatigue Risk Alert */}
       <div className="px-4 mb-4">
-        <div className={`rounded-2xl p-4 shadow-md ${
-          fatigueRisk === 'High' ? 'bg-gradient-to-r from-red-500 to-red-600' :
-          fatigueRisk === 'Medium' ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
-          'bg-gradient-to-r from-green-500 to-green-600'
-        } text-white`}>
+        <div className={`rounded-2xl p-4 shadow-md ${fatigueRisk === 'High' ? 'bg-gradient-to-r from-red-500 to-red-600' :
+            fatigueRisk === 'Medium' ? 'bg-gradient-to-r from-yellow-500 to-orange-500' :
+              'bg-gradient-to-r from-green-500 to-green-600'
+          } text-white`}>
           <div className="flex items-center mb-2">
             <span className="text-3xl mr-3">⚠️</span>
             <div className="flex-1">
@@ -57,7 +56,7 @@ export default function Dashboard() {
           </div>
           <div className="flex items-end space-x-4 mb-3">
             <div className="text-4xl font-bold text-indigo-600">{sleepScore}</div>
-            <div className="text-gray-500 pb-1">/100</div>
+            <div className="text-gray-600 pb-1">/100</div>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-3 mb-2">
             <div
@@ -67,8 +66,8 @@ export default function Dashboard() {
           </div>
           <p className="text-sm text-gray-600">
             {sleepScore >= 80 ? '✨ Excellent! You\'re well rested.' :
-             sleepScore >= 70 ? '👍 Good quality. Keep it up!' :
-             '⚠️ Below optimal. Consider more rest.'}
+              sleepScore >= 70 ? '👍 Good quality. Keep it up!' :
+                '⚠️ Below optimal. Consider more rest.'}
           </p>
         </div>
       </div>
@@ -82,10 +81,10 @@ export default function Dashboard() {
               <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${metric.color} flex items-center justify-center text-xl mb-3 shadow-sm`}>
                 {metric.icon}
               </div>
-              <p className="text-xs text-gray-500 mb-1">{metric.label}</p>
+              <p className="text-xs text-gray-600 mb-1">{metric.label}</p>
               <p className="text-2xl font-bold text-gray-900">
                 {metric.value}
-                <span className="text-sm ml-1 text-gray-500">{metric.unit}</span>
+                <span className="text-sm ml-1 text-gray-600">{metric.unit}</span>
               </p>
             </div>
           ))}
@@ -97,20 +96,19 @@ export default function Dashboard() {
         <h2 className="text-lg font-semibold text-gray-900 mb-3 px-2">Duty Schedule</h2>
         <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
           {dutySchedule.map((duty, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`p-4 ${index !== dutySchedule.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
               <div className="flex items-center justify-between mb-2">
                 <div className="flex-1">
                   <p className="font-semibold text-gray-900 text-sm mb-1">{duty.flight}</p>
-                  <p className="text-xs text-gray-500">{duty.date}</p>
+                  <p className="text-xs text-gray-600">{duty.date}</p>
                 </div>
-                <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                  duty.status === 'Completed' ? 'bg-green-100 text-green-700' :
-                  duty.status === 'Rest' ? 'bg-blue-100 text-blue-700' :
-                  'bg-yellow-100 text-yellow-700'
-                }`}>
+                <span className={`px-3 py-1 text-xs font-semibold rounded-full ${duty.status === 'Completed' ? 'bg-green-100 text-green-700' :
+                    duty.status === 'Rest' ? 'bg-blue-100 text-blue-700' :
+                      'bg-yellow-100 text-yellow-700'
+                  }`}>
                   {duty.status}
                 </span>
               </div>
@@ -135,7 +133,7 @@ export default function Dashboard() {
             <div>
               <h3 className="font-semibold text-gray-900 mb-1">Overall Condition</h3>
               <p className="text-sm text-gray-700 leading-relaxed">
-                Your health status is <strong>Good</strong>. Sleep quality is acceptable. 
+                Your health status is <strong>Good</strong>. Sleep quality is acceptable.
                 Monitor fatigue levels before your next flight.
               </p>
             </div>
@@ -145,3 +143,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

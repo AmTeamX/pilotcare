@@ -1,5 +1,6 @@
 'use client';
 
+
 import { useState } from 'react';
 
 export default function FatiguePrediction() {
@@ -98,8 +99,8 @@ export default function FatiguePrediction() {
                         onClick={handleAnalyze}
                         disabled={analyzing}
                         className={`px-6 py-3 rounded-lg font-medium transition-all ${analyzing
-                                ? 'bg-white/30 cursor-not-allowed'
-                                : 'bg-white text-orange-600 hover:bg-orange-50'
+                            ? 'bg-white/30 cursor-not-allowed'
+                            : 'bg-white text-orange-600 hover:bg-orange-50'
                             }`}
                     >
                         {analyzing ? (
@@ -144,10 +145,10 @@ export default function FatiguePrediction() {
                                     <span className="font-medium text-gray-900">{factor.name}</span>
                                     <span
                                         className={`px-2 py-1 text-xs font-semibold rounded-full ${factor.status === 'good'
-                                                ? 'bg-green-100 text-green-800'
-                                                : factor.status === 'warning'
-                                                    ? 'bg-yellow-100 text-yellow-800'
-                                                    : 'bg-red-100 text-red-800'
+                                            ? 'bg-green-100 text-green-800'
+                                            : factor.status === 'warning'
+                                                ? 'bg-yellow-100 text-yellow-800'
+                                                : 'bg-red-100 text-red-800'
                                             }`}
                                     >
                                         {factor.impact} Impact
@@ -158,10 +159,10 @@ export default function FatiguePrediction() {
                             <div className="w-full bg-gray-200 rounded-full h-2">
                                 <div
                                     className={`h-2 rounded-full ${factor.status === 'good'
-                                            ? 'bg-green-500'
-                                            : factor.status === 'warning'
-                                                ? 'bg-yellow-500'
-                                                : 'bg-red-500'
+                                        ? 'bg-green-500'
+                                        : factor.status === 'warning'
+                                            ? 'bg-yellow-500'
+                                            : 'bg-red-500'
                                         }`}
                                     style={{ width: `${factor.value}%` }}
                                 ></div>
@@ -179,10 +180,10 @@ export default function FatiguePrediction() {
                         <div
                             key={index}
                             className={`p-4 rounded-lg border-l-4 ${prediction.riskLevel === 'High'
-                                    ? 'bg-red-50 border-red-500'
-                                    : prediction.riskLevel.includes('Medium')
-                                        ? 'bg-yellow-50 border-yellow-500'
-                                        : 'bg-green-50 border-green-500'
+                                ? 'bg-red-50 border-red-500'
+                                : prediction.riskLevel.includes('Medium')
+                                    ? 'bg-yellow-50 border-yellow-500'
+                                    : 'bg-green-50 border-green-500'
                                 }`}
                         >
                             <div className="flex items-start justify-between mb-2">
@@ -191,10 +192,10 @@ export default function FatiguePrediction() {
                                         <h3 className="font-semibold text-gray-900">{prediction.flight}</h3>
                                         <span
                                             className={`px-2 py-1 text-xs font-semibold rounded-full ${prediction.riskLevel === 'High'
-                                                    ? 'bg-red-200 text-red-900'
-                                                    : prediction.riskLevel.includes('Medium')
-                                                        ? 'bg-yellow-200 text-yellow-900'
-                                                        : 'bg-green-200 text-green-900'
+                                                ? 'bg-red-200 text-red-900'
+                                                : prediction.riskLevel.includes('Medium')
+                                                    ? 'bg-yellow-200 text-yellow-900'
+                                                    : 'bg-green-200 text-green-900'
                                                 }`}
                                         >
                                             {prediction.riskLevel} Risk
@@ -232,10 +233,10 @@ export default function FatiguePrediction() {
                                         <h3 className="font-semibold text-gray-900">{rec.title}</h3>
                                         <span
                                             className={`px-2 py-1 text-xs font-semibold rounded-full ${rec.priority === 'High'
-                                                    ? 'bg-red-100 text-red-800'
-                                                    : rec.priority === 'Medium'
-                                                        ? 'bg-yellow-100 text-yellow-800'
-                                                        : 'bg-blue-100 text-blue-800'
+                                                ? 'bg-red-100 text-red-800'
+                                                : rec.priority === 'Medium'
+                                                    ? 'bg-yellow-100 text-yellow-800'
+                                                    : 'bg-blue-100 text-blue-800'
                                                 }`}
                                         >
                                             {rec.priority}

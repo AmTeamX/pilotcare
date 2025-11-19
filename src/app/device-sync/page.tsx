@@ -86,8 +86,8 @@ export default function DeviceSync() {
                         onClick={handleSyncAll}
                         disabled={isSyncing}
                         className={`px-6 py-3 rounded-lg font-medium transition-all ${isSyncing
-                                ? 'bg-white/30 cursor-not-allowed'
-                                : 'bg-white text-blue-600 hover:bg-blue-50'
+                            ? 'bg-white/30 cursor-not-allowed'
+                            : 'bg-white text-blue-600 hover:bg-blue-50'
                             }`}
                     >
                         {isSyncing ? (
@@ -126,8 +126,8 @@ export default function DeviceSync() {
                                 </div>
                                 <span
                                     className={`px-3 py-1 rounded-full text-xs font-semibold ${device.status === 'Connected'
-                                            ? 'bg-green-100 text-green-800'
-                                            : 'bg-gray-100 text-gray-800'
+                                        ? 'bg-green-100 text-green-800'
+                                        : 'bg-gray-100 text-gray-800'
                                         }`}
                                 >
                                     {device.status}
@@ -148,8 +148,8 @@ export default function DeviceSync() {
                             <div className="mt-4 flex space-x-2">
                                 <button
                                     className={`flex-1 py-2 rounded-lg text-sm font-medium transition-colors ${device.status === 'Connected'
-                                            ? 'bg-blue-50 text-blue-600 hover:bg-blue-100'
-                                            : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                                        ? 'bg-blue-50 text-blue-600 hover:bg-blue-100'
+                                        : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                                         }`}
                                     disabled={device.status !== 'Connected'}
                                 >
@@ -279,3 +279,4 @@ export default function DeviceSync() {
         </div>
     );
 }
+

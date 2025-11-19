@@ -52,7 +52,7 @@ export default function ApiSync() {
   const handleSync = () => {
     setIsSyncing(true);
     setSyncStatus('pending');
-    
+
     setTimeout(() => {
       setIsSyncing(false);
       setSyncStatus('success');
@@ -73,28 +73,26 @@ export default function ApiSync() {
         <div className="bg-white rounded-2xl p-5 shadow-md border border-gray-100">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <p className="text-xs text-gray-500 mb-1">SYNC STATUS</p>
+              <p className="text-xs text-gray-600 uppercase tracking-wide mb-1">Sync Status</p>
               <p className="font-semibold text-gray-900">Last synced: {lastSync}</p>
             </div>
-            <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-              syncStatus === 'success' ? 'bg-green-100 text-green-700' :
-              syncStatus === 'error' ? 'bg-red-100 text-red-700' :
-              'bg-yellow-100 text-yellow-700'
-            }`}>
+            <div className={`px-3 py-1 rounded-full text-xs font-semibold ${syncStatus === 'success' ? 'bg-green-100 text-green-700' :
+                syncStatus === 'error' ? 'bg-red-100 text-red-700' :
+                  'bg-yellow-100 text-yellow-700'
+              }`}>
               {syncStatus === 'success' ? '✅ Connected' :
-               syncStatus === 'error' ? '❌ Failed' :
-               '⏳ Syncing'}
+                syncStatus === 'error' ? '❌ Failed' :
+                  '⏳ Syncing'}
             </div>
           </div>
-          
+
           <button
             onClick={handleSync}
             disabled={isSyncing}
-            className={`w-full py-3 rounded-xl font-medium transition-all ${
-              isSyncing
+            className={`w-full py-3 rounded-xl font-medium transition-all ${isSyncing
                 ? 'bg-gray-200 text-gray-500'
                 : 'bg-gradient-to-r from-blue-600 to-blue-700 text-white active:scale-95'
-            }`}
+              }`}
           >
             {isSyncing ? (
               <span className="flex items-center justify-center">
@@ -118,27 +116,25 @@ export default function ApiSync() {
           {dutyLimitations.map((limit, index) => {
             const percentage = (limit.current / limit.limit) * 100;
             const isWarning = percentage > 80 || limit.warning;
-            
+
             return (
-              <div key={index} className={`bg-white rounded-2xl p-4 shadow-md border ${
-                isWarning ? 'border-orange-200' : 'border-gray-100'
-              }`}>
+              <div key={index} className={`bg-white rounded-2xl p-4 shadow-md border ${isWarning ? 'border-orange-200' : 'border-gray-100'
+                }`}>
                 <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${limit.color} flex items-center justify-center text-xl mb-3 shadow-sm`}>
                   {limit.icon}
                 </div>
-                <p className="text-xs text-gray-500 mb-2">{limit.label}</p>
+                <p className="text-xs text-gray-600 mb-2">{limit.label}</p>
                 <div className="mb-2">
                   <div className="flex items-baseline space-x-1">
                     <span className="text-xl font-bold text-gray-900">{limit.current}</span>
-                    <span className="text-sm text-gray-500">/{limit.limit}</span>
+                    <span className="text-sm text-gray-600">/{limit.limit}</span>
                   </div>
-                  <p className="text-xs text-gray-400">{limit.unit}</p>
+                  <p className="text-xs text-gray-500">{limit.unit}</p>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div
-                    className={`h-2 rounded-full ${
-                      isWarning ? 'bg-gradient-to-r from-orange-500 to-red-500' : 'bg-gradient-to-r from-green-500 to-green-600'
-                    }`}
+                    className={`h-2 rounded-full ${isWarning ? 'bg-gradient-to-r from-orange-500 to-red-500' : 'bg-gradient-to-r from-green-500 to-green-600'
+                      }`}
                     style={{ width: `${percentage}%` }}
                   ></div>
                 </div>
@@ -156,23 +152,22 @@ export default function ApiSync() {
         <h2 className="text-lg font-semibold text-gray-900 mb-3 px-2">Synced Flights</h2>
         <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
           {flightData.map((flight, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`p-4 ${index !== flightData.length - 1 ? 'border-b border-gray-100' : ''}`}
             >
               <div className="flex items-center justify-between mb-2">
                 <div>
                   <p className="font-semibold text-gray-900 text-sm mb-1">{flight.id}</p>
-                  <p className="text-xs text-gray-500">{flight.date}</p>
+                  <p className="text-xs text-gray-600">{flight.date}</p>
                 </div>
-                <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                  flight.status === 'Synced' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
-                }`}>
+                <span className={`px-2 py-1 text-xs font-semibold rounded-full ${flight.status === 'Synced' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                  }`}>
                   {flight.status}
                 </span>
               </div>
               <p className="text-sm text-gray-700 mb-1">{flight.route}</p>
-              <p className="text-xs text-gray-500">{flight.hours}h duty time</p>
+              <p className="text-xs text-gray-600">{flight.hours}h duty time</p>
             </div>
           ))}
         </div>
